@@ -65,6 +65,8 @@ iframe { margin: 1.4em auto 0 auto; display: block; }
 
 .hero figure { margin: 3.5em 1em; }
 
+.flex ul { width: 50%; box-sizing: border-box; }
+
 .courseProg { margin-top: 8em; box-sizing: border-box; padding: 0 2em; }
 .courseProg p { margin-top: 1em; }
 .courseProg a.button { width: 100%; text-align: center; }
