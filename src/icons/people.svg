@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>people</title>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Article-page" transform="translate(-21.000000, -420.000000)" fill="#555555">
+            <g id="people" transform="translate(21.000000, 420.000000)">
+                <path d="M7.00049996,8.001 C4.6676666,8.001 0,9.168 0,11.501 L0,14 L14,14 L14,11.501 C14,9.168 9.33433326,8.001 7.00049996,8.001 M7.00049996,0 C5.34461824,0 4.00071423,1.345 4.00071423,3.001 C4.00071423,4.657 5.34461824,6.001 7.00049996,6.001 C8.65738162,6.001 9.99128634,4.657 9.99128634,3.001 C9.99128634,1.345 8.65738162,0 7.00049996,0" id="Fill-8"></path>
+            </g>
+        </g>
+    </g>
+</svg>

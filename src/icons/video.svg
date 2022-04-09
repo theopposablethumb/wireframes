@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="20px" viewBox="0 0 12 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Video</title>
+    <g id="Website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Course-page" transform="translate(-34.000000, -996.000000)" fill="#555555">
+            <g id="Modules" transform="translate(20.000000, 768.000000)">
+                <g id="Lessons" transform="translate(14.000000, 114.000000)">
+                    <path d="M7.41421356,119.414214 L14.5857864,126.585786 C15.366835,127.366835 15.366835,128.633165 14.5857864,129.414214 C14.2107137,129.789286 13.7020059,130 13.1715729,130 L-1.17157288,130 C-2.27614237,130 -3.17157288,129.104569 -3.17157288,128 C-3.17157288,127.469567 -2.96085919,126.960859 -2.58578644,126.585786 L4.58578644,119.414214 C5.36683502,118.633165 6.63316498,118.633165 7.41421356,119.414214 Z" id="Video" transform="translate(6.000000, 124.000000) rotate(90.000000) translate(-6.000000, -124.000000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
