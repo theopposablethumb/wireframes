@@ -3,7 +3,7 @@ import Image from './common/Image';
 const SpeakerProfile = ({ name, role }) => {
   return (
     <div className="section">
-      <div className='content profile flex'>
+      <div className='content profile flex wrap'>
         <Image width='300' height='300' />
         <div>
           <h2>Meet {name} your instructor</h2>

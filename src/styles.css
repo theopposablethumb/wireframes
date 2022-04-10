@@ -41,7 +41,8 @@ footer nav p { margin: 0 0 0 0.2em; }
 
 .centered { text-align: center; }
 
-.flex { display: flex; flex-wrap: nowrap; }
+.flex { display: flex; }
+.wrap { flex-wrap: nowrap; }
 .twoThirds { width: 66%; }
 .thirds { width: 33%; }
 
@@ -53,9 +54,10 @@ aside h3 { background: #666; color: #fff; padding: 1em 1.25em; border-radius: 8p
 aside p, aside ul { padding: 0 2em 2em; }
 aside.list h3 { background: none; padding-bottom: 0.6em; border-bottom: 1px solid #333; color: #333; font-weight: 500; }
 
+aside.flex { padding-bottom: 1em; }
 aside.flex p { font-weight: 500; padding: 0 2em 0.5em; }
 aside.flex>p { font-size: 5em; font-weight: 700; margin: 0.25em; padding: 0; }
-aside.flex p:last-of-type { margin-top: 0; }
+aside.flex div p:last-of-type { margin-top: 0; }
 
 figure { margin: 2.8em 0; }
 figcaption { background: #666; padding: 0.75em 1em; color: #fff; border-radius: 0 0 4px 4px; }
@@ -73,8 +75,9 @@ iframe { margin: 1.4em auto 0 auto; display: block; }
 .total { width: 100%; height: 0.5em; border-radius: 4px; background: #d8d8d8; margin-top: 1em; }
 .progress { height: 100%; border-radius: 4px; background: #666; }
 
-ul.course { list-style-type: none; padding: 0; margin: 0; }
-.course li h3 { position: relative; background: #d8d8d8; border: 1px solid #AAA; padding: 0.8em 0.8em 0.8em 1.6em; }
+ul.course { list-style-type: none; padding: 0; margin: 1.4em 0 0; border: 1px solid #AAA; }
+.course li h3 { position: relative; background: #d8d8d8; border-top: 1px solid #AAA; border-bottom: 1px solid #AAA; padding: 0.8em 0.8em 0.8em 1.6em; }
+.course li:first-of-type, .course h3:first-of-type { margin-top: 0; border-top: none; }
 .course li h3::before { position: absolute; top: 1.4em; left: 0.6em; content: ''; width: 0; height: 0; border-width: 6px 5px 0 5px; border-color: #000 transparent transparent transparent; border-style: solid; }
 .course li h3.acctive::before { position: absolute; top: 1.4em; left: 0.6em; content: ''; width: 0; height: 0; border-width: 0 5px 6px 5px; border-color: #000 transparent transparent transparent; border-style: solid; }
 .course ul { padding: 0; list-style-type: none; margin: 1em; }
@@ -84,3 +87,46 @@ ul.course { list-style-type: none; padding: 0; margin: 0; }
 .profile figure { width: 25%; margin: 2.4em 3em 0 0; }
 .profile img { border-radius: 75%; border: #333 2px solid; }
 .profile p:nth-of-type(1) { margin: 0.6em 0; }
+
+@media screen and ( max-width: 1024px ) {
+  .profile figure { width: 27%; max-width: 300px; margin: 1.4em 6% 0 0; }
+  .profile div { width: 66%; }
+}
+
+@media screen and ( max-width: 900px ) {
+  .wrap { flex-wrap: wrap; }
+  aside.wrap { flex-wrap: nowrap; }
+  .twoThirds, .thirds { width: 100%; }
+
+  .hero { flex-direction: column-reverse; }
+  .hero.course { flex-direction: column; }
+  .hero figure { margin: 3em 0 0 0; }
+
+  .content { width: 90vw; }
+
+  .flex ul { width: 100%; text-align: center; list-style-position: inside; padding: 0; margin-left: 0; }
+
+  .courseProg { margin-top: 1.4em; }
+  .courseProg a.button { width: fit-content; display: block; margin: 1.5em auto 0; }
+
+  .profile figure { width: 50%; max-width: 250px; margin: 1.4em auto 0 auto; }
+  .profile div { width: 100%; }
+}
+
+@media screen and ( max-width: 700px ) {
+  aside.flex>p { font-size: 3em; margin: 0.5em 0 0.5em 0.5em; }
+}
+
+@media screen and ( max-width: 500px ) {
+  a.button { display: block; width: fit-content; margin: 1.5em auto 0; }
+
+  aside.wrap { flex-wrap: wrap; }
+  aside.flex p { margin-top: 0.6em; }
+  aside.flex>p { font-size: 5em; margin: 0em 0 0em 0.4em; }
+
+  .flex ul { padding: 0 10vw; text-align: left; list-style-position: outside; }
+  .course h3 { margin-top: 0; }
+  .course h3, .course li { overflow: auto; }
+  .course em { float: left; text-align: left; font-size: 0.8em; margin-top: 0.4em; }
+  .course ul li { background-position: 0 0.5em; }
+}

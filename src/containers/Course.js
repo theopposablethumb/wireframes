@@ -13,7 +13,7 @@ const Course = () => {
         <title>Course</title>
       </Helmet>
       <div className="section">
-        <div className="hero flex">
+        <div className="hero flex course">
           <div className='twoThirds'>
             <Intro />
           </div>
@@ -25,7 +25,7 @@ const Course = () => {
       </div>
       <div className="section grey">
         <h2 className="centered">List of skills, knowledge areas in this course</h2>
-        <div className="flex">
+        <div className="flex wrap">
           <ul>
             <li><strong>Each list item should be short</strong>, try to keep them to a single line</li>
             <li>Ideally each item <strong>should summarise something that is easy to follow</strong></li>

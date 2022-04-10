@@ -1,6 +1,6 @@
 const AsideStat = () => {
   return (
-    <aside className="flex">
+    <aside className="flex wrap">
       <p>75%</p>
       <div>
         <p>A statistic providing evidence or context to the main article. This should draw the readers attention to an important piece of data.</p>
