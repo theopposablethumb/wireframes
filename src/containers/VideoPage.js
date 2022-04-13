@@ -13,7 +13,7 @@ const VideoPage = () => {
       <article className="video">
         <Intro />
         <div className="content">
-          <Video width="800" height="500" />
+          <Video />
           <p>Short optional description or context for this video, further enhancing the content of the video. Sesame snaps sweet macaroon toffee oat cake toffee croissant. Pastry macaroon jujubes gummies toffee candy canes muffin pastry. Minimum size is 16px</p>
           <ul>
             <li>00:00 - Introduction and summary</li>

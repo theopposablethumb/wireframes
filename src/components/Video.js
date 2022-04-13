@@ -1,6 +1,8 @@
-const Video = ({ width, height }) => {
+const Video = () => {
   return (
-    <iframe width={width} height={height} src="https://www.youtube.com/embed/9ZfN87gSjvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div className="responsiveVideo">
+      <iframe src="https://www.youtube.com/embed/9ZfN87gSjvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     // <div
     //   style={{ position: 'relative', display: 'block', maxWidth: '960px' }}>
     //   <div
