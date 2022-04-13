@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../containers/Home';
 import Article from '../containers/Article';
+import ArticleCharts from '../containers/ArticleCharts';
 import VideoPage from '../containers/VideoPage';
 import Course from '../containers/Course';
 import Lesson from '../containers/Lesson';
@@ -11,7 +12,8 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" exact element={<Home />} />
-      <Route path="/article" element={<Article />} />
+      <Route path="/article" exact element={<Article />} />
+      <Route path="/article/charts" element={<ArticleCharts />} />
       <Route path="/video" element={<VideoPage />} />
       <Route path="/course" exact element={<Course />} />
       <Route path="/course/lesson" element={<Lesson />} />
