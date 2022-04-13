@@ -1,6 +1,6 @@
 const Video = ({ width, height }) => {
   return (
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/9ZfN87gSjvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width={width} height={height} src="https://www.youtube.com/embed/9ZfN87gSjvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     // <div
     //   style={{ position: 'relative', display: 'block', maxWidth: '960px' }}>
     //   <div
@@ -13,6 +13,7 @@ const Video = ({ width, height }) => {
     //       style={{position: 'absolute', top: '0px', right: '0px', bottom: '0px', left: '0px', width: '100%', height: '100%' }}></iframe>
     //   </div>
     // </div>
+    // <iframe width={width} height={height} src="https://www.youtube.com/embed/7wPJkSmHlCI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   )
 }
 
