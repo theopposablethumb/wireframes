@@ -11,8 +11,9 @@ const Home = () => {
       </Helmet>
       <Hero image />
       <HomeSection image inline bg={'grey'} />
-      <HomeSection image />
-      <HomeSection />
+      <HomeSection image inline />
+      {/* <HomeSection image />
+      <HomeSection /> */}
   </>
   );
 }
