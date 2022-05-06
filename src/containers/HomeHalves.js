@@ -10,8 +10,10 @@ const Home = () => {
         <title>Home</title>
       </Helmet>
       <Hero image />
-      <HomeSection image inline bg='grey' alignment='centered' />
-      <HomeSection image inline />
+      <div className='flex wrap'>
+        <HomeSection image inline bg='grey' layout='halves' />
+        <HomeSection image inline layout='halves' />
+      </div>
       {/* <HomeSection image />
       <HomeSection /> */}
   </>

@@ -21,7 +21,7 @@ const Article = () => {
           <p>Keep paragraphs short and concise, ideally one idea per paragraph. This makes text easy to scan quickly. Sesame snaps sweet macaroon toffee oat cake toffee croissant. Pastry macaroon jujubes gummies toffee candy canes muffin pastry. Minimum size is 16px</p>
           <AsideStat />
           <p>Video transcript provided for accessibility purposes, primarily to assist users who are visual or hearing impaired. Ideally all videos should have an option for closed captions as well. Transcript details can be time coded, and should be easy to read.</p>
-          <Image width="500" height="300" caption="Image caption, giving the image context" />
+          <Image width="500" height="200" caption="Image caption, giving the image context" />
           <h3>Tertiary Heading</h3>
           <p>This means using new paragraphs for new sections. Dummy text is from Cupcake ipsum by the way. Mmmm, tasty. Sesame snaps sweet macaroon toffee oat cake toffee croissant. Pastry macaroon jujubes gummies toffee candy canes muffin pastry.</p>
           <ul>
