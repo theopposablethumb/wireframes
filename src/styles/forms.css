@@ -1,0 +1,24 @@
+label { display: block; margin-top: 1.4em; }
+input, textarea { padding: 0.6em 0.4em; font-size: 1.4em; border-radius: 4px; border: 1px solid #ccc; width: 50%; box-sizing: border-box;}
+
+form.content { margin-bottom: 6em; }
+form.content label { margin-top: 2.8em; display: block; }
+form.content label + p { margin-top: 0.8em; }
+form.content input, form.content textarea {  width: 100%; margin: 0.8em 0 0;  }
+form.content input:focus, form.content textarea:focus { outline: none; box-shadow: 0 2px 3px 0 #a4d5f6; }
+
+div.meta { padding: 0 0.6em 0.6em; margin-top: 3em; background: #e5e5e5; border-radius: 6px; border: 1px solid #bbb; }
+
+p.charCount { margin-top: 0.2em; text-align: right;}
+
+button { margin-top: 1.6em; background: #1790e1; color: #fff; text-transform: uppercase; border-radius: 4px; font-weight: 500; font-size: 1.2em; padding: 0.6em 1em; border: none; }
+button:hover { background: #185d8c; }
+
+.preview { background: #ddd; padding-top: 0; }
+.preview .content { position: relative; z-index: 2; margin-top: 0; padding-top: 2em;}
+.preview .content::before {content: 'PREVIEW'; color: #ccc; letter-spacing: 1px; font-size: 12em; font-weight: 700; position: absolute; top: 0.27em; left: 0; z-index: -1; }
+
+.textOverlay { position: relative; }
+.textOverlay h2, .textOverlay p { position: absolute; width: 50%; background: #f7f7f7; padding: 0.4em; }
+.textOverlay h2 { top: 1em; left: 1em; }
+.textOverlay p { top: 9em; left: 1.25em; }
