@@ -18,7 +18,21 @@ button:hover { background: #185d8c; }
 .preview .content { position: relative; z-index: 2; margin-top: 0; padding-top: 2em;}
 .preview .content::before {content: 'PREVIEW'; color: #ccc; letter-spacing: 1px; font-size: 12em; font-weight: 700; position: absolute; top: 0.27em; left: 0; z-index: -1; }
 
+img.profile { width: auto; height: 100px; margin: 1.4em 0; background: #eee; padding: 0.6em; }
+
 .textOverlay { position: relative; }
 .textOverlay h2, .textOverlay p { position: absolute; width: 50%; background: #f7f7f7; padding: 0.4em; }
 .textOverlay h2 { top: 1em; left: 1em; }
 .textOverlay p { top: 9em; left: 1.25em; }
+
+ul.categories { list-style-type: none; padding: 0; margin: 1.4em 0; }
+.categories li { display: inline-block; padding: 1.2em; margin: 0 0.8em; background: #ddd; border-radius: 1em; }
+.categories li:first-child { margin-left: 0; }
+.categories li.selected, .preview .categories li { background: #555; color: #fff; }
+
+.preview .video {width: 100%; height: 0; padding-top: 56.25%; background: #ccc; margin-top: 2em; position: relative; }
+.preview .video::before { content: ''; width: 0px; height: 0px; border-style: solid; border-width: 25px 0 25px 50px; border-color: transparent transparent transparent #999; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+
+.preview .flex .intro { width: 80%; }
+.preview .flex .bookmark { width: 100px; background: #999; position: relative; }
+.preview .flex .bookmark::before { width: 0; height: 0; content: ''; border-width: 0 50px 30px 50px; border-color: transparent transparent #ddd transparent; border-style: solid; position: absolute; bottom: 0; left: 0; }

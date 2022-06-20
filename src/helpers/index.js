@@ -1,6 +1,8 @@
 import { Document, HeadingLevel, Packer, Paragraph, SectionType } from 'docx';
 import { saveAs } from 'file-saver';
 
+export const categories = ['category1', 'category2', 'category3', 'category4', 'category5'];
+
 const doc = (content, author, page) => {
   return (
     new Document({
@@ -75,6 +77,27 @@ const doc = (content, author, page) => {
                 text: ''
               })
             ),
+
+            content.cats ? (
+              new Paragraph({
+                text: 'Categories',
+                heading: HeadingLevel.HEADING_2
+              })
+            ) : (
+              new Paragraph({
+                text: ''
+              })
+            ),
+            content.cats ? (
+              new Paragraph({
+                text: `${JSON.stringify(content.cats.map((c) => c))}`
+              })
+            ) : (
+              new Paragraph({
+                text: ''
+              })
+            ),
+
             new Paragraph({
               text: 'SEO Meta Data',
               heading: HeadingLevel.HEADING_1

@@ -34,7 +34,7 @@ const Speaker = () => {
         <title>OncoConnect Content Kit - Resources Page</title>
       </Helmet>
       <ContentKit setEmail={setEmail} setName={setName} />
-      <Preview heading={heading} paragraph={paragraph} secParagraph={secParagraph} />
+      <Preview heading={heading} paragraph={paragraph} secParagraph={secParagraph} type='speaker' />
       <div className='content'>
         <form className='content'>
           <label htmlFor='headingOne'>Primary Heading - <em>between 50 and 120 characters</em></label>
