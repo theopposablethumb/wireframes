@@ -13,10 +13,10 @@ const ContentForms = () => {
         <ul>
           <li><Link to='./about-page'>About page</Link></li>
           <li><Link to='./new-events'>Event page</Link></li>
-          <li><Link to='./past-event'>Past Event page</Link></li>
+          <li><Link to='./past-events'>Past Event page</Link></li>
           <li><Link to='./resources-page'>Resources page</Link></li>
           <li><Link to='./speaker-page'>Speaker</Link></li>
-          <li><Link to='./upcoming-events'>Upcoming events</Link></li>
+          {/* <li><Link to='./upcoming-events'>Upcoming events</Link></li> */}
         </ul>
       </div>
     </>
