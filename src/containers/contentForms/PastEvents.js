@@ -12,9 +12,6 @@ import Preview from '../../components/contentForms/Preview';
 
 
 const PastEvents = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [titleLength, setTitleLength] = useState(0);
@@ -28,7 +25,6 @@ const PastEvents = () => {
 
   const page = 'Past Events Page'
   const content = { title, description, heading, paragraph, cats };
-  const author = { name, email }
 
   const selectCategory = (c) => {
     if (!cats.includes(c)) {
@@ -43,7 +39,7 @@ const PastEvents = () => {
       <Helmet>
         <title>OncoConnect Content Kit - Past Event page</title>
       </Helmet>
-      <ContentKit setName={setName} setEmail={setEmail} />
+      <ContentKit />
       <Preview heading={heading} paragraph={paragraph} categories={cats} type={'event'} />
 
       <div className='content'>
@@ -71,7 +67,7 @@ const PastEvents = () => {
           </ul>
 
           <MetaForm setDescription={setDescription} setTitle={setTitle} setTitleLength={setTitleLength} setDescriptionLength={setDescriptionLength} titleLength={titleLength} descriptionLength={descriptionLength} />
-          <button onClick={(e) => {generateDoc(e, content, author, page)}}>Generate a Word Doc</button>
+          <button onClick={(e) => {generateDoc(e, content, page)}}>Generate a Word Doc</button>
         </form>
       </div>
     </>

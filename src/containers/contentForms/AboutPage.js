@@ -8,9 +8,6 @@ import ContentKit from '../../components/contentForms/ContentKit';
 import MetaForm from '../../components/contentForms/MetaForm';
 
 const AboutPage = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-
   const [headingLength, setHeadingLength] = useState(0);
   const [paragraphLength, setParagraphLength] = useState(0);
   const [titleLength, setTitleLength] = useState(0);
@@ -23,14 +20,13 @@ const AboutPage = () => {
 
   const page = 'Past Events Page'
   const content = { title, description, heading, paragraph };
-  const author = { name, email }
 
   return (
     <>
       <Helmet>
         <title>OncoConnect Content Kit - About Page</title>
       </Helmet>
-      <ContentKit setEmail={setEmail} setName={setName} />
+      <ContentKit />
       <div className='section preview'>
         <div className='content'>
           <div className='textOverlay'>
@@ -56,7 +52,7 @@ const AboutPage = () => {
 
           <MetaForm setDescription={setDescription} setTitle={setTitle} setTitleLength={setTitleLength} setDescriptionLength={setDescriptionLength} titleLength={titleLength} descriptionLength={descriptionLength} />
 
-          <button onClick={(e) => {generateDoc(e, content, author, page)}}>Generate a Word Doc</button>
+          <button onClick={(e) => {generateDoc(e, content, page)}}>Generate a Word Doc</button>
         </form>
       </div>
     </>

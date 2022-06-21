@@ -9,8 +9,6 @@ import MetaForm from '../../components/contentForms/MetaForm';
 import Preview from '../../components/contentForms/Preview';
 
 const Speaker = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
 
   const [headingLength, setHeadingLength] = useState(0);
   const [paragraphLength, setParagraphLength] = useState(0);
@@ -26,14 +24,13 @@ const Speaker = () => {
 
   const page = 'Past Events Page'
   const content = { title, description, heading, paragraph, secParagraph };
-  const author = { name, email }
 
   return (
     <>
       <Helmet>
         <title>OncoConnect Content Kit - Resources Page</title>
       </Helmet>
-      <ContentKit setEmail={setEmail} setName={setName} />
+      <ContentKit />
       <Preview heading={heading} paragraph={paragraph} secParagraph={secParagraph} type='speaker' />
       <div className='content'>
         <form className='content'>
@@ -54,7 +51,7 @@ const Speaker = () => {
 
           <MetaForm setDescription={setDescription} setTitle={setTitle} setTitleLength={setTitleLength} setDescriptionLength={setDescriptionLength} titleLength={titleLength} descriptionLength={descriptionLength} />
 
-          <button onClick={(e) => {generateDoc(e, content, author, page)}}>Generate a Word Doc</button>
+          <button onClick={(e) => {generateDoc(e, content, page)}}>Generate a Word Doc</button>
         </form>
       </div>
     </>

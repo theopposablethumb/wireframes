@@ -3,7 +3,7 @@ import { saveAs } from 'file-saver';
 
 export const categories = ['category1', 'category2', 'category3', 'category4', 'category5'];
 
-const doc = (content, author, page) => {
+const doc = (content, page) => {
   return (
     new Document({
       title: 'OncoConnect - About Us Page Briefing Template',
@@ -18,9 +18,6 @@ const doc = (content, author, page) => {
             }),
             new Paragraph({
               text: 'https://www.oncoconnect.co.uk'
-            }),
-            new Paragraph({
-              text: `${author.name} - ${author.email}`
             }),
           ]
         },

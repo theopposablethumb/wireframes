@@ -12,9 +12,6 @@ import Preview from '../../components/contentForms/Preview';
 
 
 const NewEvent = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [titleLength, setTitleLength] = useState(0);
@@ -34,7 +31,6 @@ const NewEvent = () => {
 
   const page = 'Past Events Page'
   const content = { title, description, heading, paragraph, date, time, agendaItems };
-  const author = { name, email }
 
   const addAgendaItem = (e) => {
     e.preventDefault();
@@ -46,7 +42,7 @@ const NewEvent = () => {
       <Helmet>
         <title>OncoConnect Content Kit - New Event page</title>
       </Helmet>
-      <ContentKit setName={setName} setEmail={setEmail} />
+      <ContentKit />
       <Preview heading={heading} paragraph={paragraph} date={date} time={time} agenda={agendaItems} />
 
       <div className='content'>
@@ -95,7 +91,7 @@ const NewEvent = () => {
           <button onClick={e => addAgendaItem(e)}>Add agenda Item</button>
 
           <MetaForm setDescription={setDescription} setTitle={setTitle} setTitleLength={setTitleLength} setDescriptionLength={setDescriptionLength} titleLength={titleLength} descriptionLength={descriptionLength} />
-          <button onClick={(e) => {generateDoc(e, content, author, page)}}>Generate a Word Doc</button>
+          <button onClick={(e) => {generateDoc(e, content, page)}}>Generate a Word Doc</button>
         </form>
       </div>
     </>
