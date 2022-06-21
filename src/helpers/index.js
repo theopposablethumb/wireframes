@@ -1,7 +1,8 @@
 import { Document, HeadingLevel, Packer, Paragraph, SectionType } from 'docx';
 import { saveAs } from 'file-saver';
 
-export const categories = ['category1', 'category2', 'category3', 'category4', 'category5'];
+export const taxonomy = [ {topic: 'Haemato-Oncology', brands: ['Ninlaro', 'Adcetris'], therapyAreas: ['Myeloma', 'Hodgkin Lymphoma', 'PTCL', 'CTCL'] }, {topic: 'Lung Cancer', brands: ['Alunbrig'], therapyAreas: ['Lung cancer']}];
+
 
 const doc = (content, page) => {
   return (
@@ -75,9 +76,9 @@ const doc = (content, page) => {
               })
             ),
 
-            content.cats ? (
+            content.topic ? (
               new Paragraph({
-                text: 'Categories',
+                text: `Topic: ${content.topic}`,
                 heading: HeadingLevel.HEADING_2
               })
             ) : (
@@ -85,9 +86,40 @@ const doc = (content, page) => {
                 text: ''
               })
             ),
-            content.cats ? (
+
+            content.brands ? (
               new Paragraph({
-                text: `${JSON.stringify(content.cats.map((c) => c))}`
+                text: 'Brands',
+                heading: HeadingLevel.HEADING_2
+              })
+            ) : (
+              new Paragraph({
+                text: ''
+              })
+            ),
+            content.brands ? (
+              new Paragraph({
+                text: `${JSON.stringify(content.brands.map((b) => b))}`
+              })
+            ) : (
+              new Paragraph({
+                text: ''
+              })
+            ),
+
+            content.therapyAreas ? (
+              new Paragraph({
+                text: 'Therapy Areas',
+                heading: HeadingLevel.HEADING_2
+              })
+            ) : (
+              new Paragraph({
+                text: ''
+              })
+            ),
+            content.therapyAreas ? (
+              new Paragraph({
+                text: `${JSON.stringify(content.therapyAreas.map((ta) => ta))}`
               })
             ) : (
               new Paragraph({

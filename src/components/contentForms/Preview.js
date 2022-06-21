@@ -1,16 +1,24 @@
 import image from '../../icons/icon-woman-doctor-and-mask.svg';
 
-const Preview = ({heading, paragraph, secParagraph, date, time, agenda, categories, type }) => {
+const Preview = ({heading, paragraph, secParagraph, date, time, agenda, brands, therapyAreas, type }) => {
 
   return (
     <div className='section preview'>
       <div className='content'>
         <h2>{heading}</h2>
         {type === 'speaker' ? <img src={image} className='profile' alt='speaker' /> : null}
-        {categories ? (
+        {brands ? (
           <ul className="categories">
-            {categories.map((c, i) => {
-              return <li>{c}</li>
+            {brands.map((b, i) => {
+              return <li>{b}</li>
+            })}
+          </ul>
+          ) : null
+        }
+        {therapyAreas ? (
+          <ul className="categories">
+            {therapyAreas.map((ta, i) => {
+              return <li>{ta}</li>
             })}
           </ul>
           ) : null

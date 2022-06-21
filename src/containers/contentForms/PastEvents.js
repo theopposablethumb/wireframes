@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 
-import { generateDoc, categories } from '../../helpers';
+import { generateDoc, taxonomy } from '../../helpers';
 
 import '../../styles/forms.css';
 
@@ -21,18 +21,37 @@ const PastEvents = () => {
   const [headingLength, setHeadingLength] = useState(0);
   const [paragraph, setParagraph] = useState('Introductory text that elaborates on the heading above, and provides a summary of the video and the information I can expect to find and why it is useful for its intended audience. Inverted pyramid copy is best, provide a summary of the conclusion of the video so I can quickly decide if this video is relevant to me, and provides the information I am looking for.');
   const [paragraphLength, setParagraphLength] = useState(0);
-  const [cats, setCats] = useState([]);
+
+  const [topic, setTopic] = useState('Haemato-Oncology');
+  const [brands, setBrands] = useState([]);
+  const [therapyAreas, setTherapyAreas] = useState([]);
 
   const page = 'Past Events Page'
-  const content = { title, description, heading, paragraph, cats };
+  const content = { title, description, heading, paragraph, topic, brands, therapyAreas };
 
-  const selectCategory = (c) => {
-    if (!cats.includes(c)) {
-      setCats(cats => [...cats, c]);
+  const selectTopic = (e) => {
+    setTopic(e.target.value);
+    setBrands([]);
+    setTherapyAreas([]);
+  }
+
+  const selectBrand = (b) => {
+    if (!brands.includes(b)) {
+      setBrands(brands => [...brands, b]);
     } else {
-      setCats(cats => cats.filter((cat) => cat !== c))
+      setBrands(brands => brands.filter(brand => brand !== b))
     }
   }
+
+  const selectTherapy = (ta) => {
+    if (!therapyAreas.includes(ta)) {
+      setTherapyAreas(therapyAreas => [...therapyAreas, ta]);
+    } else {
+      setTherapyAreas(therapyAreas => therapyAreas.filter(therapy => therapy !== ta ))
+    }
+  }
+
+  const top = taxonomy.find(t => t.topic === topic);
 
   return (
     <>
@@ -40,7 +59,7 @@ const PastEvents = () => {
         <title>OncoConnect Content Kit - Past Event page</title>
       </Helmet>
       <ContentKit />
-      <Preview heading={heading} paragraph={paragraph} categories={cats} type={'event'} />
+      <Preview heading={heading} paragraph={paragraph} brands={brands} therapyAreas={therapyAreas} type={'event'} />
 
       <div className='content'>
         <form className='content'>
@@ -54,18 +73,39 @@ const PastEvents = () => {
           <textarea name='paragraph' rows='6' cols='80' onChange={e => {setParagraphLength(parseInt(e.target.value.length, 10)); setParagraph(e.target.value) }}></textarea>
           <p className='charCount'>{paragraphLength} / 500</p>
 
-          <p>Select a category or categories for this event</p>
+          <label htmlFor='taxonomy'>Select a Topic</label>
+          <select name='taxonomy' onChange={(e) => selectTopic(e)}>
+            {taxonomy.map((t, i) => {
+              return <option value={t.topic} key={i}>{t.topic}</option>
+            })}
+          </select>
+          <h3>Topic: {topic}</h3>
+          <p>Brands</p>
           <ul className='categories'>
-            {categories.map((c, i) => {
-              return(
+            {top.brands.map((b, i) => {
+              return (
                 <li
                   key={i}
-                  onClick={() => {selectCategory(c)}}
-                  className={cats.includes(c) ? 'selected' : null}
-                >{c}</li>)
+                  onClick={() => {selectBrand(b)}}
+                  className={brands.includes(b) ? 'selected' : null}
+                >{b}</li>
+              )
+            })}
+            </ul>
+            <p>Therapy Areas</p>
+            <ul className='categories'>
+            {top.therapyAreas.map((ta, i) => {
+              return (
+                <li
+                  key={i}
+                  onClick={() => {selectTherapy(ta)}}
+                  className={therapyAreas.includes(ta) ? 'selected' : null}
+                >
+                  {ta}
+                </li>
+              )
             })}
           </ul>
-
           <MetaForm setDescription={setDescription} setTitle={setTitle} setTitleLength={setTitleLength} setDescriptionLength={setDescriptionLength} titleLength={titleLength} descriptionLength={descriptionLength} />
           <button onClick={(e) => {generateDoc(e, content, page)}}>Generate a Word Doc</button>
         </form>
