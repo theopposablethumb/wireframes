@@ -152,9 +152,9 @@ const doc = (content, page) => {
   )
 }
 
-export const generateDoc = (e, content, author, page) => {
+export const generateDoc = (e, content, page) => {
   e.preventDefault();
-  Packer.toBlob(doc(content, author, page)).then((blob) => {
+  Packer.toBlob(doc(content, page)).then((blob) => {
     saveAs(blob, `${page}.docx`);
   });
 }
