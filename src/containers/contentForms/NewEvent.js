@@ -37,7 +37,6 @@ const NewEvent = () => {
     setAgendaItems([...agendaItems, {topic: agendaTopic, speaker: agendaSpeaker, time: agendaTime}])
   }
 
-  console.log(agendaItems);
   return (
     <>
       <Helmet>
